@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ImageCropAnnotate</string>
+    <string name="action_settings">Settings</string>
+    <string name="media_access_denied_msg">You denied storage access, no photos will be added.</string>
+</resources>
