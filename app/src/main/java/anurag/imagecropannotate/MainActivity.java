@@ -125,12 +125,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Intent intent = new Intent(MainActivity.this, PhotoEditorActivity.class);
                     intent.putExtra("selectedImagePath", imageUri.toString());
                     startActivityForResult(intent, PhotoEditorActivity.REQUEST_CROP_IMAGE);
-                    /*Intent intent = new Intent(context, CropImageActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putParcelable(CropImage.CROP_IMAGE_EXTRA_SOURCE, imageUri);
-                    bundle.putParcelable(CropImage.CROP_IMAGE_EXTRA_OPTIONS, mOptions);
-                    intent.putExtra(CropImage.CROP_IMAGE_EXTRA_BUNDLE, bundle);
-                    startActivityForResult(intent, REQUEST_CROP_IMAGE);*/
                 }
                 break;
         }
