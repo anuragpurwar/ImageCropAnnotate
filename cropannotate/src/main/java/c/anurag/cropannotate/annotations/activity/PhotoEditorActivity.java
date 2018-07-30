@@ -47,6 +47,8 @@ import java.util.List;
 
 public class PhotoEditorActivity extends AppCompatActivity implements View.OnClickListener, OnPhotoEditorSDKListener {
 
+    public static final String IMAGE_PATH = "imagePath";
+    public static final String SELECTED_IMAGE_PATH = "selectedImagePath";
     private final String TAG = "PhotoEditorActivity";
     private RelativeLayout parentImageRelativeLayout;
     private RecyclerView drawingViewColorPickerRecyclerView;
@@ -69,7 +71,7 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_editor);
 
-        String selectedImagePath = getIntent().getExtras().getString("selectedImagePath");
+        String selectedImagePath = getIntent().getExtras().getString(SELECTED_IMAGE_PATH);
         imageUri = Uri.parse(selectedImagePath);
         /*BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 1;
@@ -273,7 +275,7 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
                 String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
                 String imageName = "IMG_" + timeStamp + ".jpg";
                 Intent returnIntent = new Intent();
-                returnIntent.putExtra("imagePath", photoEditorSDK.saveImage("PhotoEditorSDK", imageName));
+                returnIntent.putExtra(IMAGE_PATH, photoEditorSDK.saveImage(getString(R.string.app_name), imageName));
                 setResult(Activity.RESULT_OK, returnIntent);
                 finish();
             }

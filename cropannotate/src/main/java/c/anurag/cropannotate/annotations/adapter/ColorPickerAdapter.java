@@ -19,7 +19,7 @@ import java.util.List;
 import c.anurag.cropannotate.R;
 
 /**
- * Created by Ahmed Adel on 5/8/17.
+ * Created by Anurag Purwar on 5/8/17.
  */
 
 public class ColorPickerAdapter extends RecyclerView.Adapter<ColorPickerAdapter.ViewHolder> {

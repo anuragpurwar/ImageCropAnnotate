@@ -1,7 +1,7 @@
 package c.anurag.cropannotate.annotations.widget;
 
 /**
- * Created by Ahmed Adel on 5/7/17.
+ * Created by Anurag Purwar on 5/7/17.
  */
 
 import android.app.Activity;

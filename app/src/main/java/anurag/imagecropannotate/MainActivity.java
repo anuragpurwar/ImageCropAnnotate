@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (requestCode) {
             case PhotoEditorActivity.REQUEST_CROP_IMAGE:
                 if (resultCode == Activity.RESULT_OK && null != data) {
-                    String path = data.getStringExtra("imagePath");
+                    String path = data.getStringExtra(PhotoEditorActivity.IMAGE_PATH);
                     Uri imageUri = Uri.fromFile(new File(path));
                     Bitmap bitmap = null;
                     try {
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (resultCode == Activity.RESULT_OK) {
                     Uri imageUri = CropImage.getPickImageResultUri(this, data);
                     Intent intent = new Intent(MainActivity.this, PhotoEditorActivity.class);
-                    intent.putExtra("selectedImagePath", imageUri.toString());
+                    intent.putExtra(PhotoEditorActivity.SELECTED_IMAGE_PATH, imageUri.toString());
                     startActivityForResult(intent, PhotoEditorActivity.REQUEST_CROP_IMAGE);
                 }
                 break;
